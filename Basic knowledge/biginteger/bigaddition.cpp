@@ -19,6 +19,21 @@ vector<int> add(vector<int> &A, vector<int> &B)
         c.push_back(1);
     return c;
 }
+vector<int> add (vector<int>&A ,vector<int>&B)
+{
+    vector<int> c;
+    int t=0;
+    for(int i=0;i<A.size()||i<B.size();i++)
+    {
+        if(i<A.size()) t+=A[i];
+        if(i<B.size()) t+=B[i];
+        c.push_back(t%10);
+        t/=10;
+    }
+    if(t)
+    c.push_back(1);
+    return c;
+}
 int main()
 {
     string a, b;
